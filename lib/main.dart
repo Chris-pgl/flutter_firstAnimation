@@ -114,5 +114,3 @@ class _MyHomePageState extends State<MyHomePage>
     );
   }
 }
-
-//TODO FLutter 3 -Animazioni pdf page 36
