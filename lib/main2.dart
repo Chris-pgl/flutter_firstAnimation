@@ -7,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,8 +38,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 //Aggiunta controller
-class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
+class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   late AnimationController _sadController;
   late AnimationController _happyController;
 
@@ -51,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage>
   void initState() {
     super.initState();
 
-    // 👎 tristezza (oscillazione)
+    //  tristezza
     _sadController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 600),
@@ -66,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage>
           }
         });
 
-    // 👍 gioia (zoom)
+    //  gioia
     _happyController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 400),
@@ -105,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage>
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // 👎 triste
+          //  triste
           AnimatedBuilder(
             animation: _rotationAnimation,
             builder: (context, child) {
@@ -121,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage>
 
           const SizedBox(width: 40),
 
-          // 👍 felice
+          //  felice
           AnimatedBuilder(
             animation: _scaleAnimation,
             builder: (context, child) {
